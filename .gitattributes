@@ -1,0 +1,3 @@
+# Preserve the exact bytes covered by each signed source manifest.
+mod_lumen10prova/** -text
+quizaccess_lumen10prova/** -text
