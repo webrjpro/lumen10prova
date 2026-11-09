@@ -1,0 +1,28 @@
+{{!
+    This file is part of Moodle - http:moodle.org/
+
+     Moodle is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+
+     Moodle is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with Moodle. If not, see <http:www.gnu.org/licenses/>.
+
+    @template mod_lumen10prova/ai
+    @copyright 2026 Carlos Antonio de Oliveira Piquet
+    @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+}}
+<div class="l10-card"><h3>{{#str}}aititle,mod_lumen10prova{{/str}}</h3>
+<p>{{#str}}aiconfig,mod_lumen10prova{{/str}}</p><p>{{#str}}aiinstructions,mod_lumen10prova{{/str}}</p>
+{{^enabled}}<p>{{#str}}aidisabled,mod_lumen10prova{{/str}}</p>{{/enabled}}
+{{#enabled}}<form method="post"><input type="hidden" name="id" value="{{id}}"><input type="hidden" name="sesskey" value="{{sesskey}}">
+<label for="l10-prompt">{{#str}}aiprompt,mod_lumen10prova{{/str}}</label><textarea id="l10-prompt" class="form-control" name="prompt" maxlength="12000" rows="8" required></textarea>
+<label><input type="checkbox" name="consent" value="1" required> {{#str}}aiconsent,mod_lumen10prova{{/str}}</label>
+<p><button class="btn btn-primary">{{#str}}aisubmit,mod_lumen10prova{{/str}}</button></p></form>{{/enabled}}
+{{#answer}}<h4>{{#str}}aisuggestion,mod_lumen10prova{{/str}}</h4><pre class="l10-wrap">{{answer}}</pre>{{/answer}}</div>

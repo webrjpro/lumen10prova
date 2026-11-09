@@ -1,0 +1,28 @@
+{{!
+    This file is part of Moodle - http:moodle.org/
+
+     Moodle is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+
+     Moodle is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with Moodle. If not, see <http:www.gnu.org/licenses/>.
+
+    @template mod_lumen10prova/room
+    @copyright 2026 Carlos Antonio de Oliveira Piquet
+    @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+}}
+<div class="l10-card"><h3>{{#str}}room,mod_lumen10prova{{/str}}</h3><p>{{#str}}roomnotice,mod_lumen10prova{{/str}}</p>
+{{#canmanage}}<div class="l10-actions"><form method="post" action="{{actionurl}}"><input type="hidden" name="id" value="{{id}}"><input type="hidden" name="sesskey" value="{{sesskey}}">
+<button class="btn btn-primary" name="action" value="releaseall">{{#str}}releaseall,mod_lumen10prova{{/str}}</button>
+{{#codeenabled}}<button class="btn btn-primary" name="action" value="rotatecode">{{#str}}rotatecode,mod_lumen10prova{{/str}}</button>{{/codeenabled}}
+<button class="btn btn-primary" name="action" value="publish">{{#str}}publishresults,mod_lumen10prova{{/str}}</button></form></div>{{/canmanage}}
+<div id="l10-room-count" role="status"></div><div class="l10-scroll"><table class="generaltable"><thead><tr>
+<th>{{#str}}student,mod_lumen10prova{{/str}}</th><th>{{#str}}status,mod_lumen10prova{{/str}}</th><th>{{#str}}remaining,mod_lumen10prova{{/str}}</th><th>{{#str}}focusreconnections,mod_lumen10prova{{/str}}</th><th>{{#str}}ipsession,mod_lumen10prova{{/str}}</th><th>{{#str}}actions,mod_lumen10prova{{/str}}</th>
+</tr></thead><tbody id="l10-room-rows"></tbody></table></div><p id="l10-room-error" role="alert"></p></div>

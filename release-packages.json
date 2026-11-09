@@ -1,0 +1,18 @@
+[
+  {
+    "component": "mod_lumen10prova",
+    "release": "1.3.0",
+    "file": "mod_lumen10prova-1.3.0.zip",
+    "sha256": "284a33f15eee5f8b6299c7deecedbf104ab2f8bd28fc64ac1409cfeef67782eb",
+    "bytes": 190658,
+    "files": 84
+  },
+  {
+    "component": "quizaccess_lumen10prova",
+    "release": "1.2.0",
+    "file": "quizaccess_lumen10prova-1.2.0.zip",
+    "sha256": "268f1fd9d7369e5a00ddf1514577c6c77ce94d97941b66a84e43b23ca0bea2bc",
+    "bytes": 27823,
+    "files": 15
+  }
+]

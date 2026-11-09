@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/lumen10prova/db" VERSION="20261004" COMMENT="Institutional exam wrapper with native Quiz engine">
+  <TABLES>
+    <TABLE NAME="lumen10prova" COMMENT="Lumen10 Prova lumen10prova">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="course" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="name" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="255" />
+        <FIELD NAME="intro" TYPE="text" NOTNULL="true" SEQUENCE="false" />
+        <FIELD NAME="introformat" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="4" DEFAULT="1" />
+        <FIELD NAME="modalenabled" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="1" />
+        <FIELD NAME="paperstyle" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="1" />
+        <FIELD NAME="answersheetenabled" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="1" />
+        <FIELD NAME="watermarkopacity" TYPE="number" LENGTH="5" DECIMALS="3" NOTNULL="true" DEFAULT="0.06" />
+        <FIELD NAME="quizid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="timeopen" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="timeclose" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="timelimit" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="3600" />
+        <FIELD NAME="attempts" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="1" />
+        <FIELD NAME="grademethod" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="1" />
+        <FIELD NAME="blocksize" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="10" />
+        <FIELD NAME="shufflequestions" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="1" />
+        <FIELD NAME="shuffleanswers" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="1" />
+        <FIELD NAME="releasetime" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="released" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="showmarks" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="1" />
+        <FIELD NAME="showfeedback" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="1" />
+        <FIELD NAME="showanswers" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="codeenabled" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="manualstart" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="syncstart" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="groupid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="monitorenabled" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="1" />
+        <FIELD NAME="logevents" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="fullscreen" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="exitlock" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="1" DEFAULT="0" />
+        <FIELD NAME="blockcopy" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="anonymousgrading" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="aienabled" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="completionattempt" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="completiongraded" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="completionpassed" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="timecreated" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="timemodified" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="navigation" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="16" DEFAULT="free" />
+        <FIELD NAME="releasepolicy" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="16" DEFAULT="close" />
+        <FIELD NAME="profilefields" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="255" DEFAULT="" />
+        <FIELD NAME="alerts" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="80" DEFAULT="900,300,60" />
+        <FIELD NAME="codehash" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="255" DEFAULT="" />
+        <FIELD NAME="grade" TYPE="number" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="10" DECIMALS="5" />
+        <FIELD NAME="gradepass" TYPE="number" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="6" DECIMALS="5" />
+        <FIELD NAME="regulations" TYPE="text" NOTNULL="true" SEQUENCE="false" />
+        <FIELD NAME="rubric" TYPE="text" NOTNULL="true" SEQUENCE="false" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="lumen10prova_gate" COMMENT="Lumen10 Prova lumen10prova_gate">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="provaid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="userid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="releaseat" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="acceptedhash" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="64" DEFAULT="" />
+        <FIELD NAME="acceptedat" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="codefails" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="4" DEFAULT="0" />
+        <FIELD NAME="codelocked" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="prova-user" UNIQUE="true" FIELDS="provaid, userid" />
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="lumen10prova_live" COMMENT="Lumen10 Prova lumen10prova_live">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="provaid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="attemptid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="userid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="candidate" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="32" DEFAULT="" />
+        <FIELD NAME="lastseen" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="iphash" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="64" DEFAULT="" />
+        <FIELD NAME="devicehash" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="64" DEFAULT="" />
+        <FIELD NAME="blockedat" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="blockreason" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="32" DEFAULT="none" />
+        <FIELD NAME="securitygeneration" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="1" />
+        <FIELD NAME="focuschanges" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="reconnections" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="ipchanges" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="devicechanges" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="attempt" UNIQUE="true" FIELDS="attemptid" />
+        <INDEX NAME="candidate" UNIQUE="true" FIELDS="candidate" />
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="lumen10prova_log" COMMENT="Lumen10 Prova lumen10prova_log">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="provaid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="userid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="attemptid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="actorid" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+        <FIELD NAME="kind" TYPE="char" NOTNULL="true" SEQUENCE="false" LENGTH="40" DEFAULT="" />
+        <FIELD NAME="detail" TYPE="text" NOTNULL="true" SEQUENCE="false" />
+        <FIELD NAME="timecreated" TYPE="int" NOTNULL="true" SEQUENCE="false" LENGTH="10" DEFAULT="0" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
