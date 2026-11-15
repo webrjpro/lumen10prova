@@ -1,0 +1,250 @@
+
+/* LUMEN10 PROVA — TERMOS DE USO */
+
+.l10-terms {
+  --l10-green: #07845d;
+  --l10-dark: #073f35;
+  --l10-mint: #e9f8f1;
+  --l10-border: #dceae4;
+  --l10-text: #263b36;
+
+  max-width: 1000px;
+  margin: 64px auto;
+  padding: clamp(24px, 5vw, 60px);
+  color: var(--l10-text);
+  background: #fff;
+  border: 1px solid var(--l10-border);
+  border-radius: 22px;
+  font-family: inherit;
+  line-height: 1.75;
+  scroll-margin-top: 90px;
+  box-shadow: 0 18px 50px rgba(0, 65, 45, .06);
+}
+
+.l10-terms * {
+  box-sizing: border-box;
+}
+
+.l10-eyebrow {
+  display: block;
+  color: var(--l10-green);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.l10-terms h2 {
+  margin: 15px 0;
+  color: var(--l10-dark);
+  font-size: clamp(29px, 4vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -.8px;
+}
+
+.l10-subtitle {
+  margin: 0;
+  font-size: 18px;
+  color: #536962;
+}
+
+.l10-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.l10-meta span {
+  padding: 7px 12px;
+  background: var(--l10-mint);
+  color: #086647;
+  border: 1px solid var(--l10-border);
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.l10-intro {
+  padding: 24px;
+  background: #f4fbf7;
+  border-left: 4px solid #09a975;
+  border-radius: 0 12px 12px 0;
+}
+
+.l10-terms-content article {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--l10-border);
+}
+
+.l10-terms h3 {
+  margin: 0 0 18px;
+  color: var(--l10-dark);
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.l10-terms p {
+  margin: 0 0 15px;
+}
+
+.l10-terms p:last-child {
+  margin-bottom: 0;
+}
+
+.l10-terms a {
+  color: #007e59;
+  overflow-wrap: anywhere;
+  text-underline-offset: 4px;
+}
+
+.l10-terms a:hover {
+  color: #045b43;
+}
+
+.l10-terms a:focus-visible,
+.l10-terms button:focus-visible {
+  outline: 3px solid #3cbd91;
+  outline-offset: 4px;
+}
+
+.l10-terms code {
+  padding: 3px 6px;
+  background: #edf3f1;
+  border-radius: 4px;
+  font-size: .9em;
+  overflow-wrap: anywhere;
+}
+
+.l10-visit {
+  margin-top: 42px;
+  padding: clamp(24px, 4vw, 40px);
+  background: linear-gradient(
+    135deg,
+    #063f35,
+    #087c5a
+  );
+  color: white;
+  border-radius: 18px;
+}
+
+.l10-visit .l10-eyebrow {
+  color: #9aebc6;
+}
+
+.l10-visit h3 {
+  margin: 14px 0;
+  color: white;
+  font-size: 28px;
+}
+
+.l10-visit p {
+  color: #e0f5ec;
+}
+
+.l10-visit-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 20px;
+  margin-top: 14px;
+  background: white;
+  border-radius: 9px;
+  color: #07543e !important;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s, background .2s;
+}
+
+.l10-visit-link:hover {
+  background: #dcf7e9;
+  transform: translateY(-2px);
+}
+
+.l10-terms-footer {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #687a73;
+}
+
+.l10-terms-footer button {
+  padding: 10px 16px;
+  border: 1px solid #a6cabe;
+  border-radius: 8px;
+  color: #07543e;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.l10-terms-footer button:hover {
+  background: #eff9f4;
+}
+
+@media (max-width: 700px) {
+  .l10-terms {
+    margin: 24px 12px;
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .l10-terms h3 {
+    font-size: 19px;
+  }
+
+  .l10-intro {
+    padding: 18px;
+  }
+
+  .l10-visit-link {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .l10-visit-link {
+    transition: none;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+
+  .l10-terms {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    max-width: none;
+  }
+
+  .l10-terms article {
+    break-inside: avoid;
+  }
+
+  .l10-terms-footer button {
+    display: none;
+  }
+
+  .l10-visit {
+    background: #fff;
+    border: 1px solid #999;
+    color: #000;
+  }
+
+  .l10-visit h3,
+  .l10-visit p {
+    color: #000;
+  }
+}
